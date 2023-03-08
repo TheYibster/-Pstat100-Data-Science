@@ -14624,7 +14624,7 @@ dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>There are so missingness in our tidy data. Specifically, <code>gdppc2015</code> is missing about 1.1% of values, <code>value</code> is missing about 1.6% of its values, and <code>cpi2010</code> is missing about 7% of its values. This data is missing because the country did not report its gdp/cpi that year.</p>
+<p>There are some missingness in our tidy data. Specifically, <code>gdppc2015</code> is missing about 1.1% of values, <code>value</code> is missing about 1.6% of its values, and <code>cpi2010</code> is missing about 7% of its values. This data is missing because the country did not report its gdp/cpi that year.</p>
 <p>One interesting thing of note is that year is not continuous for all countries. Some countries did not report anything for certain years; therefore, we need to keep track of these gap years.</p>
 
 </div>
@@ -14637,7 +14637,7 @@ dtype: float64</pre>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Alot of our variables are binary factors; so we will take a look at the most important variables of interest: <code>gdppc2015</code>, <code>cpi2010</code>, and <code>prop</code>.</p>
-<p>Ideally, we would group these variables by years; however, we will not do so here for the sake of space, but keep in mind that the rest of the work will consider these variables in the respective year groups.</p>
+<p>Ideally, we would group these variables by years; however, we will not do so here for the sake of space, but keep in mind that the rest of the work will consider these variables in their respective year groups.</p>
 <p>Below are the count, mean, std, min, 25%, 50%, 75%, and max statistics for <code>gdppc2015</code>, <code>cpi2010</code>, and <code>prop</code>:</p>
 
 </div>
@@ -14791,12 +14791,13 @@ dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="1)-Average-CPI-against-year">1) <code>Average CPI</code> against <code>year</code><a class="anchor-link" href="#1)-Average-CPI-against-year">&#182;</a></h4>
+<h5 id="1)-Average-CPI-against-year">1) <code>Average CPI</code> against <code>year</code><a class="anchor-link" href="#1)-Average-CPI-against-year">&#182;</a></h5>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>The following is the average <code>cpi2010</code> for all countries per year. Clearly, there is some positve correlation between <code>cpi2010</code> against <code>year</code>.</p>
+<p>Side-note: notice that there are outliers; there are data outside of our 1990-2020 range on the year-axis. We will keep this in mind as we proceed into part two of the project.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14827,13 +14828,13 @@ dtype: float64</pre>
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 
-<div id="altair-viz-4c6a6102784a496b8db5f3023a38a935"></div>
+<div id="altair-viz-e819e22b5639430c964a8ec961de32ac"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-4c6a6102784a496b8db5f3023a38a935") {
-      outputDiv = document.getElementById("altair-viz-4c6a6102784a496b8db5f3023a38a935");
+    if (outputDiv.id !== "altair-viz-e819e22b5639430c964a8ec961de32ac") {
+      outputDiv = document.getElementById("altair-viz-e819e22b5639430c964a8ec961de32ac");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -14892,12 +14893,12 @@ dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="2)-Average-prop-of-kids-that-completed-grades(1-9)-against-year">2) <code>Average prop of kids that completed grades(1-9)</code> against <code>year</code><a class="anchor-link" href="#2)-Average-prop-of-kids-that-completed-grades(1-9)-against-year">&#182;</a></h4>
+<h5 id="2)-Average-prop-of-kids-that-completed-grades(1-9)-against-year">2) <code>Average prop of kids that completed grades(1-9)</code> against <code>year</code><a class="anchor-link" href="#2)-Average-prop-of-kids-that-completed-grades(1-9)-against-year">&#182;</a></h5>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Again the chart below show some relationship between <code>prop</code> against <code>year</code>.</p>
+<p>Again, the chart below shows some positive correlation between <code>prop</code> against <code>year</code>.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14928,13 +14929,13 @@ dtype: float64</pre>
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 
-<div id="altair-viz-a5ebfc1f50b749759b20c7dd1c2aab9a"></div>
+<div id="altair-viz-2822baf38ea14f1cbde1e2e4cee1c3ff"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a5ebfc1f50b749759b20c7dd1c2aab9a") {
-      outputDiv = document.getElementById("altair-viz-a5ebfc1f50b749759b20c7dd1c2aab9a");
+    if (outputDiv.id !== "altair-viz-2822baf38ea14f1cbde1e2e4cee1c3ff") {
+      outputDiv = document.getElementById("altair-viz-2822baf38ea14f1cbde1e2e4cee1c3ff");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -15000,7 +15001,7 @@ dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="3)-plot2-faceted-by-sex">3) <code>plot2</code> faceted by <code>sex</code><a class="anchor-link" href="#3)-plot2-faceted-by-sex">&#182;</a></h4>
+<h5 id="3)-plot2-faceted-by-sex">3) <code>plot2</code> faceted by <code>sex</code><a class="anchor-link" href="#3)-plot2-faceted-by-sex">&#182;</a></h5>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -15030,13 +15031,13 @@ dtype: float64</pre>
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 
-<div id="altair-viz-e7721390734f49d6991ff8e686edbc78"></div>
+<div id="altair-viz-a6b340af3ab14717954000df50ac697d"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-e7721390734f49d6991ff8e686edbc78") {
-      outputDiv = document.getElementById("altair-viz-e7721390734f49d6991ff8e686edbc78");
+    if (outputDiv.id !== "altair-viz-a6b340af3ab14717954000df50ac697d") {
+      outputDiv = document.getElementById("altair-viz-a6b340af3ab14717954000df50ac697d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -15095,7 +15096,7 @@ dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="4)-plot2-faeted-by-location">4) <code>plot2</code> faeted by <code>location</code><a class="anchor-link" href="#4)-plot2-faeted-by-location">&#182;</a></h4>
+<h5 id="4)-plot2-faeted-by-location">4) <code>plot2</code> faeted by <code>location</code><a class="anchor-link" href="#4)-plot2-faeted-by-location">&#182;</a></h5>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -15125,13 +15126,13 @@ dtype: float64</pre>
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 
-<div id="altair-viz-1a68c881f1f24e2789a817392dcdea83"></div>
+<div id="altair-viz-a94e7a8313e54ba0bdee9a4e39337e45"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-1a68c881f1f24e2789a817392dcdea83") {
-      outputDiv = document.getElementById("altair-viz-1a68c881f1f24e2789a817392dcdea83");
+    if (outputDiv.id !== "altair-viz-a94e7a8313e54ba0bdee9a4e39337e45") {
+      outputDiv = document.getElementById("altair-viz-a94e7a8313e54ba0bdee9a4e39337e45");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -15190,7 +15191,7 @@ dtype: float64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>It's hard to tell the difference between Male and Female with this simple line chart, but we will explore their effects further in part two. On the other hand, it looks like kids in Urban areas retain a higher <code>prop</code> overall when compared to kids in Rural areas; we will explore this further in part two also.</p>
+<p>It's hard to tell the difference between Male and Female with this simple line chart, but we will explore their effects further in part two. On the other hand, it looks like kids in Urban areas retain a higher education <code>prop</code> overall when compared to kids in Rural areas; we will explore this further in part two as well.</p>
 
 </div>
 </div>
