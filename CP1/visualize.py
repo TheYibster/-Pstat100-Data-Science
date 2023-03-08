@@ -13,6 +13,9 @@ def line_plot1(df):
     scatter1 = alt.Chart(data_1).mark_line().encode(
         x = 'year:N',
         y = alt.Y('cpi2010:Q', title = 'Average Global CPI')
+    ).properties(
+        width = 400,
+        height = 200
     )
 
     return scatter1
@@ -21,6 +24,9 @@ def line_plot2(df):
     scatter2 = alt.Chart(df.loc[:, ['year','prop']].groupby(['year']).mean().reset_index()).mark_line().encode(
         x = 'year:N',
         y = alt.Y('prop:Q', title = 'Avg Prop. of Kids that completed grades 1-9',scale = alt.Scale(zero = False))
+    ).properties(
+        width = 400,
+        height = 200
     )
     return scatter2
 

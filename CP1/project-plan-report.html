@@ -9,10 +9,10 @@
 
 
 <style type="text/css">
-    pre { line-height: 125%; margin: 0; }
-td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+    pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: var(--jp-cell-editor-active-background) }
 .highlight { background: var(--jp-cell-editor-background); color: var(--jp-mirror-editor-variable-color) }
@@ -56,19 +56,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .s1 { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Single */
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
-  </style>
-<style type="text/css">
-    /*This file contains any manual css for this page that needs to override the global styles.
-This is only required when different pages style the same element differently. This is just
-a hack to deal with our current css styles and no new styling should be added in this file.*/
-
-#ipython-main-app {
-    position: relative;
-}
-#jupyter-main-app {
-    position: relative;
-}
-
   </style>
 
 
@@ -14272,10 +14259,13 @@ a.anchor-link {
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 </pre></div>
 
      </div>
@@ -14286,78 +14276,56 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="PSTAT-100-Project-plan-report">PSTAT 100 Project plan report<a class="anchor-link" href="#PSTAT-100-Project-plan-report">&#182;</a></h1><p>This is a guide to preparing your project plan. It functions both as a guide to the work you'll need to do and as a guide to preparing the deliverable. You can use it as a template to draft the plan report; if so, please remove the text explanations of each section.</p>
-<p>While you may find it useful initially to follow the outline given, you do not need to adhere to it exactly -- you're free to organize your submission in the way that seems most natural to you. However, please do keep the high-level sections, so that your report includes the following headers:</p>
-<ol>
-<li>Background</li>
-<li>Data description</li>
-<li>Initial exporations</li>
-<li>Planned work</li>
-</ol>
-<p>Your report does not need to be long. It should be about 2-4 pages, and may not be much longer than this template once you replace the guiding text with your own work.</p>
-
+<h1 id="PSTAT-100-Project-plan">PSTAT 100 Project plan<a class="anchor-link" href="#PSTAT-100-Project-plan">&#182;</a></h1>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Group-information">Group information<a class="anchor-link" href="#Group-information">&#182;</a></h2><p><strong>Group members</strong>:</p>
+<p><strong>Yibo Liang</strong>, <strong>Aarya Kulkarni</strong>, <strong>Alan Su</strong>, and <strong>Nicole Magallanes Flores</strong></p>
 <p><strong>Contributions</strong>:</p>
 <ol>
-<li>Member 1 studied the data documentation and prepared the data description.</li>
-<li>Member 2 worked on tidying the dataset.</li>
-<li>Member 3 ...</li>
+<li>Alan Su: worked on finding data and data background (Part 0)</li>
+<li>Yibo Liang: worked on tidying the dataset/initial exploration (Part 2)</li>
+<li>Aarya Kulkarni: worked on data description (Part 1)</li>
+<li>Nicole Magallanes Flores: worked on planned work (Part 3)</li>
 </ol>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2 id="0.-Background">0. Background<a class="anchor-link" href="#0.-Background">&#182;</a></h2><p>This section should introduce your reader to the general topic you're engaging with in your project and explain any specialized knowledge that they may need to understand your dataset and why it's interesting. It doesn't need to be long, but should touch on the following points:</p>
-<ul>
-<li>Introduce the topic of your project.</li>
-<li>What area or areas of study are you in dialogue with for your project?</li>
-<li>What is your data about, broadly? </li>
-<li>What is the motivation for collecting the kind of data you're working with, and what sorts of things could you potentially learn?</li>
-</ul>
-<p>You can look to the background sections in the homework assignments for examples. (There you can also see how to include images in your notebook.) The background sections of the homeworks are usually short and focused paragraphs intended to orient you to what you'll do in the assignment. They don't go into a lot of detail -- just enough to (hopefully) convince you that the data are interesting and explain any terminology or general information you may not know.</p>
-<p>You may find it useful to write up the data description first, think about what the reader should know before they peek at your dataset, and then come back to the background section. I often write the background sections of your assignments last, once I have a sense of what kind of information would be most useful going into the assignment.</p>
-
+<h3 id="Background">Background<a class="anchor-link" href="#Background">&#182;</a></h3>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>Start your draft here.</em></p>
+<p>Education is an important issue in every country around the world, as it is with education that people can innovate and drive their country forward. But while education is obviously important to many people, not everyone is able to have access to an education. Some countries may not have the resources to put every citizen through school, or some countries may have the resources, but for example, people that live in rural areas might choose not to go through education in favor of continuing a family business or pursuing their own economic endeavors.</p>
+<p>The dataset that we have chosen to work with is a dataset taken from <a href="https://datacatalog.worldbank.org/search/dataset/0038973/Education-Attainment-and-Enrollment-around-the-World">The World Bank's data catalog</a>, their dataset on educational attainment and enrollment around the world. This dataset takes data from many types of surveys from all around the world in order to get data on things such as socioeconomic conditions, or living standards such as rural or urban. Using this data, we will explore how educational attainment is affected by conditions such as wealth, gender, and living location, and can use this information to advocate for better educational attainment standards everywhere in the world. Is the world bank right when they say that there are large differences in educational attainment by wealth? Will gender and living standards affect a person's educational attainment? Using this data, we plan on looking into these questions and hope to gain a better understanding of what educational attainment is like around the world.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-<h2 id="1.-Data-description">1. Data description<a class="anchor-link" href="#1.-Data-description">&#182;</a></h2><p>This section should introduce your dataset in detail. It should reflect your having gone through the collect/acquaint/tidy stages of the lifecycle. Below I've provided you with an outline. You do not need to adhere to this strictly -- in fact, it would be more natural to divide the items among a few short paragraphs -- but you should touch on each item in a format that suits your project.</p>
+<h2 id="1.-Data-description">1. Data description<a class="anchor-link" href="#1.-Data-description">&#182;</a></h2>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The data describes the percentage of population ages 15 to 19 that has completed each grade (1-9) in developing countries around the world spanning multiple years (1990-2020).</p>
+<p>This data came from a World Bank database with summary information on education level attained, taken from household surveys from developing countries around the world (<a href="http://www.worldbank.org/en/research/brief/edattain">http://www.worldbank.org/en/research/brief/edattain</a>). Household-based surveys used to create this dataset include: Demographic and Health Surveys (DHS- <a href="http://www.measuredhs.com">http://www.measuredhs.com</a>), Multiple Indicator Cluster Surveys (MICS- <a href="http://www.childinfo.org">http://www.childinfo.org</a>), Living Standards Measurements Study Surveys (LSMS- <a href="http://www.worldbank.org/lsms">http://www.worldbank.org/lsms</a>), and other household-based surveys (country specific), ex: socio-economic surveys. In addition to these household-based surveys, selected country/year variables were added to the dataset from the World Development Indicators database (<a href="http://databank.worldbank.org">http://databank.worldbank.org</a>). Some variables added include gdp per capita (based on 2015 U.S. dollars) and the consumer price index (based on 2010) for various countries.</p>
+<p>The relevant population is the population ages 15-19 in the countries surveyed. Since the dataset is aggregated from multiple surveys. Some documentation was provided on two of the types of household surveys performed.</p>
+<p>The Demographic and Health Surveys (DHS) used a mix of questionnaires, biomarkers, and geographic information as survey tools to conduct this survey. This survey's sampling design consisted of a two-stage stratified cluster design in which Enumeration Areas (areas canvased) were drawn from Census files (stage 1), followed by a sample of households being drawn from a list in each Enumeration Area (stage 2).</p>
+<p>The Living Standards Measurement Study Surveys (LSMS)'s sample frame is given by the Population and Housing Census. Following this, a two round sampling method is used. The first round selects Primary Selection Units (PSU) through random sampling. The second round selects subunits from each PSU using a method of systematic sampling.</p>
+<p>Since the sampling frame is usually given by the country's Census, and the sampling mechanism involved random sampling, we can say that the scope of inference are the households captured in the Census.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Basic-information">Basic information<a class="anchor-link" href="#Basic-information">&#182;</a></h3><p>Help your reader understand what your data is, where it came from, and how it can be used. Provide the following.</p>
-<p><strong>General description</strong>: provide a one- or two-sentence description of the data right at the beginning. For instance, "The data are diatom counts sampled from evenly-spaced depths in a sediment core from the gulf of California." Nothing too complicated, just something to give your reader a sense of the 'what' right off the bat.</p>
-<p><strong>Source</strong>: indicate where your data came from. Provide a verbal description -- who collected it as part of what project and where -- and either a citation or a hyperlink.</p>
-<p><strong>Collection methods</strong>: How were the data values obtained? Provide a simple description of how measurements were taken (using scientific equipment? web scraping? surveys?).</p>
-<p><strong>Sampling design and scope of inference</strong>: Indicate the relevant population. If identifiable from data documentation, state the sampling frame and sampling mechanism and indicate the scope of inference. If no information is available about the sampling design, indicate this instead, and discuss the extent to which having no scope of inference is a limitation for the particular topic you're investigating.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>Start your draft here.</em></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Data-semantics-and-structure">Data semantics and structure<a class="anchor-link" href="#Data-semantics-and-structure">&#182;</a></h3><p><strong>Units and observations</strong>: State the observational units.</p>
-<p><strong>Variable descriptions</strong>: Provide a table of variable descriptions. If your dataset is large and you'll only work with a subset of the total available variables, limit your attention to the variables that you'll work with. Here's a template you can work with:</p>
+<h3 id="Data-semantics-and-structure">Data semantics and structure<a class="anchor-link" href="#Data-semantics-and-structure">&#182;</a></h3><p><strong>Units and observations</strong>: The observational units are countries around the world.</p>
+<p><strong>Variable descriptions</strong>:</p>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -14368,29 +14336,440 @@ a.anchor-link {
 </thead>
 <tbody>
 <tr>
-<td>GCLASS</td>
-<td>Graduating class</td>
+<td>country</td>
+<td>observtion country</td>
+<td>Character</td>
+<td>Name of Country </td>
+</tr>
+<tr>
+<td>year</td>
+<td>year of observation</td>
 <td>Numeric</td>
 <td>Calendar year </td>
 </tr>
+<tr>
+<td>gdppc2015</td>
+<td>gdp per capita (2015 U.S. dollars)</td>
+<td>Numeric</td>
+<td>gdppc </td>
+</tr>
+<tr>
+<td>cpi2010</td>
+<td>consumer price index (Based on 2010)</td>
+<td>Numeric</td>
+<td>cpi(hundreds) </td>
+</tr>
+<tr>
+<td>level</td>
+<td>level of education</td>
+<td>Numeric</td>
+<td>grade </td>
+</tr>
+<tr>
+<td>sex</td>
+<td>sex of group</td>
+<td>Factor</td>
+<td>male/female </td>
+</tr>
+<tr>
+<td>location</td>
+<td>location development</td>
+<td>Factor</td>
+<td>urban/rural </td>
+</tr>
+<tr>
+<td>prop</td>
+<td>proportion of the sample that attained the education</td>
+<td>Numeric</td>
+<td>percentage </td>
+</tr>
 </tbody>
 </table>
-<p><strong>Example rows</strong>: Print a few example rows of your dataset in tidy format. Please don't include the codes you used to manipulate the raw data. Do that in a separate notebook and export the result to a .csv file -- <code>data.to_csv('tidy-data.csv')</code> -- to load directly into the cell below.</p>
+<p><strong>Example rows</strong>:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># load tidied data and print rows</span>
+<span class="n">data_tidy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/tidy_data.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">)</span>
+<span class="n">data_tidy</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>year</th>
+      <th>gdppc2015</th>
+      <th>cpi2010</th>
+      <th>location</th>
+      <th>sex</th>
+      <th>level</th>
+      <th>prop</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>2015</td>
+      <td>556.007</td>
+      <td>132.883</td>
+      <td>Urban</td>
+      <td>Male</td>
+      <td>1</td>
+      <td>0.926</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Afghanistan</td>
+      <td>2007</td>
+      <td>392.710</td>
+      <td>83.074</td>
+      <td>Urban</td>
+      <td>Male</td>
+      <td>1</td>
+      <td>0.846</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Afghanistan</td>
+      <td>2010</td>
+      <td>526.104</td>
+      <td>100.000</td>
+      <td>Urban</td>
+      <td>Male</td>
+      <td>1</td>
+      <td>0.862</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Angola</td>
+      <td>2015</td>
+      <td>4166.980</td>
+      <td>159.405</td>
+      <td>Urban</td>
+      <td>Male</td>
+      <td>1</td>
+      <td>0.976</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Angola</td>
+      <td>1999</td>
+      <td>2458.096</td>
+      <td>0.684</td>
+      <td>Urban</td>
+      <td>Male</td>
+      <td>1</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h2 id="2.-Initial-explorations">2. Initial explorations<a class="anchor-link" href="#2.-Initial-explorations">&#182;</a></h2>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Basic-properties-of-the-dataset">Basic properties of the dataset<a class="anchor-link" href="#Basic-properties-of-the-dataset">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Dimensions:"><strong>Dimensions:</strong><a class="anchor-link" href="#Dimensions:">&#182;</a></h4>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_tidy</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(22536, 8)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The tidy data has 22536 rows and 8 columns.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>Start your draft here.</em></p>
+<h4 id="Missing-Data:"><strong>Missing Data:</strong><a class="anchor-link" href="#Missing-Data:">&#182;</a></h4>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_tidy</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
 
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>country      0.000000
+year         0.000000
+gdppc2015    0.011182
+cpi2010      0.070288
+location     0.000000
+sex          0.000000
+level        0.000000
+prop         0.015974
+dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>There are so missingness in our tidy data. Specifically, <code>gdppc2015</code> is missing about 1.1% of values, <code>value</code> is missing about 1.6% of its values, and <code>cpi2010</code> is missing about 7% of its values. This data is missing because the country did not report its gdp/cpi that year.</p>
+<p>One interesting thing of note is that year is not continuous for all countries. Some countries did not report anything for certain years; therefore, we need to keep track of these gap years.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Variable-Summaries:"><strong>Variable Summaries:</strong><a class="anchor-link" href="#Variable-Summaries:">&#182;</a></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Alot of our variables are binary factors; so we will take a look at the most important variables of interest: <code>gdppc2015</code>, <code>cpi2010</code>, and <code>prop</code>.</p>
+<p>Ideally, we would group these variables by years; however, we will not do so here for the sake of space, but keep in mind that the rest of the work will consider these variables in the respective year groups.</p>
+<p>Below are the count, mean, std, min, 25%, 50%, 75%, and max statistics for <code>gdppc2015</code>, <code>cpi2010</code>, and <code>prop</code>:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_tidy</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;gdppc2015&#39;</span><span class="p">,</span> <span class="s1">&#39;cpi2010&#39;</span><span class="p">,</span> <span class="s1">&#39;prop&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gdppc2015</th>
+      <th>cpi2010</th>
+      <th>prop</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>22284.000000</td>
+      <td>20952.000000</td>
+      <td>22176.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>2570.711876</td>
+      <td>82.319928</td>
+      <td>0.713313</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>2597.316331</td>
+      <td>48.889600</td>
+      <td>0.282070</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>236.461000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>751.473000</td>
+      <td>51.094000</td>
+      <td>0.526000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>1579.700000</td>
+      <td>79.160500</td>
+      <td>0.816500</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>3674.354000</td>
+      <td>106.762000</td>
+      <td>0.955000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>28693.063000</td>
+      <td>508.339000</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The summary statistic alone is not enough to make initial generalizations about our data. As mentioned earlier, we should group the data by <code>year</code> and analyze the statistics of each <code>year</code>. We will briefly look at the statistics with consideration to year below in the <code>Exploratory Analysis</code> section.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Exploratory-analysis"><strong>Exploratory analysis</strong><a class="anchor-link" href="#Exploratory-analysis">&#182;</a></h3>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># load tidied data and print rows</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">data_transformers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">max_rows</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">visualize</span> <span class="kn">import</span> <span class="n">line_plot1</span><span class="p">,</span> <span class="n">line_plot2</span><span class="p">,</span> <span class="n">line_plot3</span><span class="p">,</span> <span class="n">line_plot4</span>
 </pre></div>
 
      </div>
@@ -14401,56 +14780,442 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Visualize-Trends">Visualize Trends<a class="anchor-link" href="#Visualize-Trends">&#182;</a></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We won't do any complex EDA here, but we will take a look at some trends of our statistics when grouped by <code>year</code> through some simple line charts.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="1)-Average-CPI-against-year">1) <code>Average CPI</code> against <code>year</code><a class="anchor-link" href="#1)-Average-CPI-against-year">&#182;</a></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The following is the average <code>cpi2010</code> for all countries per year. Clearly, there is some positve correlation between <code>cpi2010</code> against <code>year</code>.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">line_plot1</span><span class="p">(</span><span class="n">data_tidy</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+
+<div id="altair-viz-1eb374edd30543cdb6e43283d49ecdaa"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-1eb374edd30543cdb6e43283d49ecdaa") {
+      outputDiv = document.getElementById("altair-viz-1eb374edd30543cdb6e43283d49ecdaa");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-37fafa5f57d20b666976bb21f2fbc39c"}, "mark": "line", "encoding": {"x": {"field": "year", "type": "nominal"}, "y": {"field": "cpi2010", "title": "Average Global CPI", "type": "quantitative"}}, "height": 200, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-37fafa5f57d20b666976bb21f2fbc39c": [{"year": 1981, "cpi2010": 0.0}, {"year": 1985, "cpi2010": 0.0}, {"year": 1989, "cpi2010": 18.569666666666635}, {"year": 1990, "cpi2010": 21.493625000000044}, {"year": 1991, "cpi2010": 28.52059999999994}, {"year": 1992, "cpi2010": 29.12620000000001}, {"year": 1993, "cpi2010": 22.43400000000003}, {"year": 1994, "cpi2010": 37.19018181818171}, {"year": 1995, "cpi2010": 37.65093750000008}, {"year": 1996, "cpi2010": 39.81882352941171}, {"year": 1997, "cpi2010": 48.614999999999924}, {"year": 1998, "cpi2010": 52.64054545454539}, {"year": 1999, "cpi2010": 38.298090909090924}, {"year": 2000, "cpi2010": 54.083358490565956}, {"year": 2001, "cpi2010": 52.1206363636364}, {"year": 2002, "cpi2010": 62.467000000000034}, {"year": 2003, "cpi2010": 64.10633333333347}, {"year": 2004, "cpi2010": 68.50353333333341}, {"year": 2005, "cpi2010": 70.44200000000036}, {"year": 2006, "cpi2010": 78.62430555555622}, {"year": 2007, "cpi2010": 78.92084999999983}, {"year": 2008, "cpi2010": 85.81724999999996}, {"year": 2009, "cpi2010": 95.6476111111109}, {"year": 2010, "cpi2010": 100.0}, {"year": 2011, "cpi2010": 108.21550000000019}, {"year": 2012, "cpi2010": 113.1830833333331}, {"year": 2013, "cpi2010": 124.28237499999997}, {"year": 2014, "cpi2010": 130.0947600000002}, {"year": 2015, "cpi2010": 137.6732142857142}, {"year": 2016, "cpi2010": 153.5116923076928}, {"year": 2017, "cpi2010": 148.8585000000004}, {"year": 2018, "cpi2010": 149.0267500000004}, {"year": 2019, "cpi2010": 193.6835882352945}, {"year": 2020, "cpi2010": 161.28449999999987}]}}, {"mode": "vega-lite"});
+</script>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="2)-Average-prop-of-kids-that-completed-grades(1-9)-against-year">2) <code>Average prop of kids that completed grades(1-9)</code> against <code>year</code><a class="anchor-link" href="#2)-Average-prop-of-kids-that-completed-grades(1-9)-against-year">&#182;</a></h4>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Again the chart below show some relationship between <code>prop</code> against <code>year</code>.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">line_plot2</span><span class="p">(</span><span class="n">data_tidy</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+
+<div id="altair-viz-11a739f98f7840d297eb2cf3e026d792"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-11a739f98f7840d297eb2cf3e026d792") {
+      outputDiv = document.getElementById("altair-viz-11a739f98f7840d297eb2cf3e026d792");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-ae00254ddc9f9566ef2ca062a65c6745"}, "mark": "line", "encoding": {"x": {"field": "year", "type": "nominal"}, "y": {"field": "prop", "scale": {"zero": false}, "title": "Avg Prop. of Kids that completed grades 1-9", "type": "quantitative"}}, "height": 200, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-ae00254ddc9f9566ef2ca062a65c6745": [{"year": 1981, "prop": 0.46549999999999986}, {"year": 1985, "prop": 0.4815277777777779}, {"year": 1989, "prop": 0.7853611111111107}, {"year": 1990, "prop": 0.740281746031746}, {"year": 1991, "prop": 0.6496722222222217}, {"year": 1992, "prop": 0.5896309523809516}, {"year": 1993, "prop": 0.6957373737373742}, {"year": 1994, "prop": 0.6128589743589742}, {"year": 1995, "prop": 0.6877187500000007}, {"year": 1996, "prop": 0.6343664021164019}, {"year": 1997, "prop": 0.67530753968254}, {"year": 1998, "prop": 0.6443634259259255}, {"year": 1999, "prop": 0.6888931623931621}, {"year": 2000, "prop": 0.661070175438598}, {"year": 2001, "prop": 0.6178106060606053}, {"year": 2002, "prop": 0.8059243827160493}, {"year": 2003, "prop": 0.6420169753086418}, {"year": 2004, "prop": 0.6730759259259261}, {"year": 2005, "prop": 0.698635582010581}, {"year": 2006, "prop": 0.7362507507507514}, {"year": 2007, "prop": 0.7039166666666669}, {"year": 2008, "prop": 0.7034565972222215}, {"year": 2009, "prop": 0.8380864197530857}, {"year": 2010, "prop": 0.7022948028673842}, {"year": 2011, "prop": 0.748766666666668}, {"year": 2012, "prop": 0.7801250000000007}, {"year": 2013, "prop": 0.7713194444444444}, {"year": 2014, "prop": 0.7814411111111099}, {"year": 2015, "prop": 0.8076909722222213}, {"year": 2016, "prop": 0.7395619658119654}, {"year": 2017, "prop": 0.8074660493827159}, {"year": 2018, "prop": 0.7831388888888894}, {"year": 2019, "prop": 0.8277717391304354}, {"year": 2020, "prop": 0.7250972222222223}]}}, {"mode": "vega-lite"});
+</script>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The natural followup question to plot-2 is whether <code>sex</code> and <code>location</code> of the kids affect the <code>prop</code>.</p>
+<p>Below are two plots of plot-2 faceted by <code>sex</code> and <code>location</code> respectively:</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="3)-plot2-faceted-by-sex">3) <code>plot2</code> faceted by <code>sex</code><a class="anchor-link" href="#3)-plot2-faceted-by-sex">&#182;</a></h4>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">line_plot3</span><span class="p">(</span><span class="n">data_tidy</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+
+<div id="altair-viz-26445e881f4249789da296976ab975ea"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-26445e881f4249789da296976ab975ea") {
+      outputDiv = document.getElementById("altair-viz-26445e881f4249789da296976ab975ea");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-9fde563b6f95a79eb4a9309b9d47132d"}, "facet": {"column": {"field": "sex", "type": "nominal"}}, "spec": {"mark": "line", "encoding": {"x": {"field": "year", "type": "nominal"}, "y": {"field": "prop", "scale": {"zero": false}, "title": "Avg Prop. of Kids that completed grades 1-9", "type": "quantitative"}}, "height": 200, "width": 400}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-9fde563b6f95a79eb4a9309b9d47132d": [{"year": 1981, "sex": "Female", "prop": 0.48227777777777775}, {"year": 1981, "sex": "Male", "prop": 0.4487222222222223}, {"year": 1985, "sex": "Female", "prop": 0.5052777777777779}, {"year": 1985, "sex": "Male", "prop": 0.4577777777777778}, {"year": 1989, "sex": "Female", "prop": 0.7828518518518519}, {"year": 1989, "sex": "Male", "prop": 0.7878703703703704}, {"year": 1990, "sex": "Female", "prop": 0.7344206349206346}, {"year": 1990, "sex": "Male", "prop": 0.7461428571428574}, {"year": 1991, "sex": "Female", "prop": 0.648438888888889}, {"year": 1991, "sex": "Male", "prop": 0.6509055555555553}, {"year": 1992, "sex": "Female", "prop": 0.5595158730158729}, {"year": 1992, "sex": "Male", "prop": 0.6197460317460314}, {"year": 1993, "sex": "Female", "prop": 0.6905303030303032}, {"year": 1993, "sex": "Male", "prop": 0.7009444444444446}, {"year": 1994, "sex": "Female", "prop": 0.5789871794871796}, {"year": 1994, "sex": "Male", "prop": 0.6467307692307686}, {"year": 1995, "sex": "Female", "prop": 0.6861076388888887}, {"year": 1995, "sex": "Male", "prop": 0.6893298611111117}, {"year": 1996, "sex": "Female", "prop": 0.6189206349206353}, {"year": 1996, "sex": "Male", "prop": 0.649812169312169}, {"year": 1997, "sex": "Female", "prop": 0.6572738095238095}, {"year": 1997, "sex": "Male", "prop": 0.6933412698412699}, {"year": 1998, "sex": "Female", "prop": 0.6187013888888891}, {"year": 1998, "sex": "Male", "prop": 0.6700254629629621}, {"year": 1999, "sex": "Female", "prop": 0.6780641025641022}, {"year": 1999, "sex": "Male", "prop": 0.6997222222222219}, {"year": 2000, "sex": "Female", "prop": 0.6508576998050679}, {"year": 2000, "sex": "Male", "prop": 0.671282651072126}, {"year": 2001, "sex": "Female", "prop": 0.6038914141414146}, {"year": 2001, "sex": "Male", "prop": 0.6317297979797978}, {"year": 2002, "sex": "Female", "prop": 0.7994845679012348}, {"year": 2002, "sex": "Male", "prop": 0.8123641975308638}, {"year": 2003, "sex": "Female", "prop": 0.6127993827160494}, {"year": 2003, "sex": "Male", "prop": 0.6712345679012349}, {"year": 2004, "sex": "Female", "prop": 0.6587925925925928}, {"year": 2004, "sex": "Male", "prop": 0.6873592592592587}, {"year": 2005, "sex": "Female", "prop": 0.6868518518518526}, {"year": 2005, "sex": "Male", "prop": 0.7104193121693131}, {"year": 2006, "sex": "Female", "prop": 0.7207477477477481}, {"year": 2006, "sex": "Male", "prop": 0.7517537537537542}, {"year": 2007, "sex": "Female", "prop": 0.6909912280701758}, {"year": 2007, "sex": "Male", "prop": 0.7168421052631582}, {"year": 2008, "sex": "Female", "prop": 0.6833437499999999}, {"year": 2008, "sex": "Male", "prop": 0.7235694444444446}, {"year": 2009, "sex": "Female", "prop": 0.8501358024691354}, {"year": 2009, "sex": "Male", "prop": 0.8260370370370371}, {"year": 2010, "sex": "Female", "prop": 0.6895501792114703}, {"year": 2010, "sex": "Male", "prop": 0.7150394265232982}, {"year": 2011, "sex": "Female", "prop": 0.7428777777777775}, {"year": 2011, "sex": "Male", "prop": 0.7546555555555554}, {"year": 2012, "sex": "Female", "prop": 0.7766759259259263}, {"year": 2012, "sex": "Male", "prop": 0.7835740740740741}, {"year": 2013, "sex": "Female", "prop": 0.7704201388888884}, {"year": 2013, "sex": "Male", "prop": 0.7722187500000001}, {"year": 2014, "sex": "Female", "prop": 0.7814888888888885}, {"year": 2014, "sex": "Male", "prop": 0.7813933333333339}, {"year": 2015, "sex": "Female", "prop": 0.8000833333333329}, {"year": 2015, "sex": "Male", "prop": 0.8152986111111111}, {"year": 2016, "sex": "Female", "prop": 0.7316965811965813}, {"year": 2016, "sex": "Male", "prop": 0.7474273504273506}, {"year": 2017, "sex": "Female", "prop": 0.7994197530864195}, {"year": 2017, "sex": "Male", "prop": 0.8155123456790123}, {"year": 2018, "sex": "Female", "prop": 0.7807676767676774}, {"year": 2018, "sex": "Male", "prop": 0.785510101010101}, {"year": 2019, "sex": "Female", "prop": 0.8374106280193242}, {"year": 2019, "sex": "Male", "prop": 0.8181328502415465}, {"year": 2020, "sex": "Female", "prop": 0.7299444444444443}, {"year": 2020, "sex": "Male", "prop": 0.7202499999999998}]}}, {"mode": "vega-lite"});
+</script>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="4)-plot2-faeted-by-location">4) <code>plot2</code> faeted by <code>location</code><a class="anchor-link" href="#4)-plot2-faeted-by-location">&#182;</a></h4>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">line_plot4</span><span class="p">(</span><span class="n">data_tidy</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+
+<div id="altair-viz-c188d82890b64442916360816f883c5b"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-c188d82890b64442916360816f883c5b") {
+      outputDiv = document.getElementById("altair-viz-c188d82890b64442916360816f883c5b");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-4c72be876880fa653f9dcfc6ce21c8f5"}, "facet": {"column": {"field": "location", "type": "nominal"}}, "spec": {"mark": "line", "encoding": {"x": {"field": "year", "type": "nominal"}, "y": {"field": "prop", "scale": {"zero": false}, "title": "Avg Prop. of Kids that completed grades 1-9", "type": "quantitative"}}, "height": 200, "width": 400}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-4c72be876880fa653f9dcfc6ce21c8f5": [{"year": 1981, "location": "Rural", "prop": 0.3276111111111112}, {"year": 1981, "location": "Urban", "prop": 0.6033888888888889}, {"year": 1985, "location": "Rural", "prop": 0.3488333333333334}, {"year": 1985, "location": "Urban", "prop": 0.6142222222222222}, {"year": 1989, "location": "Rural", "prop": 0.7141296296296296}, {"year": 1989, "location": "Urban", "prop": 0.8565925925925926}, {"year": 1990, "location": "Rural", "prop": 0.6595158730158733}, {"year": 1990, "location": "Urban", "prop": 0.8210476190476189}, {"year": 1991, "location": "Rural", "prop": 0.5424111111111111}, {"year": 1991, "location": "Urban", "prop": 0.7569333333333331}, {"year": 1992, "location": "Rural", "prop": 0.4696865079365077}, {"year": 1992, "location": "Urban", "prop": 0.709575396825397}, {"year": 1993, "location": "Rural", "prop": 0.6025101010101014}, {"year": 1993, "location": "Urban", "prop": 0.7889646464646465}, {"year": 1994, "location": "Rural", "prop": 0.5064914529914534}, {"year": 1994, "location": "Urban", "prop": 0.7192264957264952}, {"year": 1995, "location": "Rural", "prop": 0.5856736111111108}, {"year": 1995, "location": "Urban", "prop": 0.7897638888888899}, {"year": 1996, "location": "Rural", "prop": 0.5307354497354498}, {"year": 1996, "location": "Urban", "prop": 0.7379973544973542}, {"year": 1997, "location": "Rural", "prop": 0.5905119047619048}, {"year": 1997, "location": "Urban", "prop": 0.7601031746031742}, {"year": 1998, "location": "Rural", "prop": 0.5479305555555561}, {"year": 1998, "location": "Urban", "prop": 0.740796296296296}, {"year": 1999, "location": "Rural", "prop": 0.5996282051282049}, {"year": 1999, "location": "Urban", "prop": 0.7781581196581195}, {"year": 2000, "location": "Rural", "prop": 0.5658576998050683}, {"year": 2000, "location": "Urban", "prop": 0.756282651072126}, {"year": 2001, "location": "Rural", "prop": 0.5040126262626262}, {"year": 2001, "location": "Urban", "prop": 0.7316085858585856}, {"year": 2002, "location": "Rural", "prop": 0.7451450617283948}, {"year": 2002, "location": "Urban", "prop": 0.8667037037037031}, {"year": 2003, "location": "Rural", "prop": 0.5375092592592591}, {"year": 2003, "location": "Urban", "prop": 0.7465246913580251}, {"year": 2004, "location": "Rural", "prop": 0.5895222222222216}, {"year": 2004, "location": "Urban", "prop": 0.7566296296296297}, {"year": 2005, "location": "Rural", "prop": 0.6226058201058209}, {"year": 2005, "location": "Urban", "prop": 0.7746653439153451}, {"year": 2006, "location": "Rural", "prop": 0.661337837837838}, {"year": 2006, "location": "Urban", "prop": 0.8111636636636635}, {"year": 2007, "location": "Rural", "prop": 0.6163274853801175}, {"year": 2007, "location": "Urban", "prop": 0.7915058479532163}, {"year": 2008, "location": "Rural", "prop": 0.6194201388888888}, {"year": 2008, "location": "Urban", "prop": 0.7874930555555558}, {"year": 2009, "location": "Rural", "prop": 0.7947808641975302}, {"year": 2009, "location": "Urban", "prop": 0.8813919753086422}, {"year": 2010, "location": "Rural", "prop": 0.626354838709678}, {"year": 2010, "location": "Urban", "prop": 0.7782347670250905}, {"year": 2011, "location": "Rural", "prop": 0.666179999999999}, {"year": 2011, "location": "Urban", "prop": 0.8313533333333335}, {"year": 2012, "location": "Rural", "prop": 0.7140023148148152}, {"year": 2012, "location": "Urban", "prop": 0.8462476851851851}, {"year": 2013, "location": "Rural", "prop": 0.7018090277777776}, {"year": 2013, "location": "Urban", "prop": 0.8408298611111112}, {"year": 2014, "location": "Rural", "prop": 0.7218044444444445}, {"year": 2014, "location": "Urban", "prop": 0.841077777777778}, {"year": 2015, "location": "Rural", "prop": 0.7455555555555553}, {"year": 2015, "location": "Urban", "prop": 0.869826388888889}, {"year": 2016, "location": "Rural", "prop": 0.656303418803419}, {"year": 2016, "location": "Urban", "prop": 0.8228205128205132}, {"year": 2017, "location": "Rural", "prop": 0.7535493827160491}, {"year": 2017, "location": "Urban", "prop": 0.8613827160493822}, {"year": 2018, "location": "Rural", "prop": 0.7140454545454549}, {"year": 2018, "location": "Urban", "prop": 0.852232323232323}, {"year": 2019, "location": "Rural", "prop": 0.7853599033816425}, {"year": 2019, "location": "Urban", "prop": 0.870183574879228}, {"year": 2020, "location": "Rural", "prop": 0.6423611111111109}, {"year": 2020, "location": "Urban", "prop": 0.8078333333333332}]}}, {"mode": "vega-lite"});
+</script>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>It's hard to tell the difference between Male and Female with this simple line chart, but we will explore their effects further in part two. On the other hand, it looks like kids in Urban areas retain a higher <code>prop</code> overall when compared to kids in Rural areas; we will explore this further in part two also.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
-<h2 id="2.-Initial-explorations">2. Initial explorations<a class="anchor-link" href="#2.-Initial-explorations">&#182;</a></h2><p>At this stage, you may spend most of your effort on the computing side tidying up the data. You're not expected to complete a thorough exploratory analysis, and if your dataset was especially messy to start with, you may not even begin your exploratory analysis by the time you prepare this report. You have the option to leave exploration for the next stage of work and simply report basic properties of the dataset, but you should at minimum address the items in the 'basic properties' section below.</p>
-
+<h2 id="3.-Planned-work">3. Planned work<a class="anchor-link" href="#3.-Planned-work">&#182;</a></h2>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Basic-properties-of-the-dataset">Basic properties of the dataset<a class="anchor-link" href="#Basic-properties-of-the-dataset">&#182;</a></h3><p>Help the reader get acquainted with your dataset on a simple level by identifying characteristics of the dataset and variable summaries. Some amount of code is fine here, but try to use code cells sparingly.</p>
-<p><strong>Dimensions</strong>: state the dimensions of the data (in tidy format, of course).</p>
-<p><strong>Missing values</strong>: Are there missing values? If so, why are they missing?</p>
-<p><strong>Variable summaries</strong>: Provide simple variable summaries for the most important variables in your dataset. Preferably, you'll do this for all variables, but if you have a large number, you might need to prioritize and focus on the ones most of interest. What exactly you do is a little case-specific, but think of things like means and variances, min/max, number of levels and observation counts for categorical variables, etc.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>Start your draft here.</em></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Exploratory-analysis">Exploratory analysis<a class="anchor-link" href="#Exploratory-analysis">&#182;</a></h3><p>If you were lucky and your dataset was neat, you should aim to include a few exploratory plots or tables here -- they don't need to be polished at this stage, but you should select plots that are informative (rather than including all plots you may have looked at).</p>
-<p>If you do include exploratory graphics or tables, please explain in a sentence or two what each one shows. Try to include a minimum of code. Consider <a href="https://altair-viz.github.io/user_guide/saving_charts.html#png-svg-and-pdf-format">saving your plots as images</a> and inputting images into markdown cells instead of generating them anew via code cells.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2 id="3.-Planned-work">3. Planned work<a class="anchor-link" href="#3.-Planned-work">&#182;</a></h2><p>Here you should indicate your tentative ideas for your analysis. Don't worry, these aren't final -- you can always change your mind later or shift gears if they don't pan out. The objective is to have you start thinking ahead about what you'll do.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Questions">Questions<a class="anchor-link" href="#Questions">&#182;</a></h3><p>Please propose two focused questions that you plan to explore.</p>
-<ol>
-<li><em>Question 1 here</em></li>
-<li><em>Question 2 here</em></li>
+<h3 id="Questions">Questions<a class="anchor-link" href="#Questions">&#182;</a></h3><ol>
+<li>Are there significant differences in educational attainment depending on wealth?</li>
+<li>Do gender and living standards affect a person's educational attainment? How can we expect educational attainment to change in the next few years due to gender and living standards?</li>
 </ol>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Proposed-approaches">Proposed approaches<a class="anchor-link" href="#Proposed-approaches">&#182;</a></h3><p>For each question, please describe an idea or two about how you might approach the question.</p>
-<ol>
-<li><em>Approach 1 here</em> </li>
-<li><em>Approach 2 here</em></li>
+<h3 id="Proposed-approaches">Proposed approaches<a class="anchor-link" href="#Proposed-approaches">&#182;</a></h3><ol>
+<li><p>For our first question we must explore the relationship between educational attainment and wealth. To explore this relationship it will be useful to first explore the distribution of each variable on its own. We would explore educational attainment by plotting against the observed proportion to see the proportion of the sample that attained the education at each grade level across all countries combined. We can then build a seperate scatterplot of our variables prop vs. gpdpc2015 where we can encode the points within the scatterplot to represent another variable such as the countries to give us more information about our data.</p>
+</li>
+<li><p>For our second question we are looking into how gender and living standards affect educational attainment. For this question we would explore the relationship of these variables by plotting educational attainment vs year. We would encode each plot to show the proportion of attained education with a different line for each location (whether rural or urban) and be faceted by sex to allow us to have a more clear visual of any significant trends that are attributed to either sex or location. Given that earlier in this report we could see that there is a notable relationship between these variables, our next step would be to fit our data to a multiple linear regression model given that we have data for rural and urban locations seperately. After fitting our data would go back to creating a line plot similar to the one previosuly done, plotting prop vs year and mapping location to the color aesthetic. Lastly we would make use of the data given by our fitted regression model to predict how we would expect educational attainment to change in the next few years with our variables of interest.</p>
+</li>
 </ol>
 
 </div>
@@ -14462,9 +15227,7 @@ a.anchor-link {
 <li>Save file to confirm all changes are on disk</li>
 <li>Run <em>Kernel &gt; Restart &amp; Run All</em> to execute all code from top to bottom</li>
 <li>Save file again to write any new output to disk</li>
-<li>Select <em>File &gt; Download as &gt; HTML</em>.</li>
-<li>Open in Google Chrome and print to PDF on A3 paper in portrait orientation.</li>
-<li>Submit to Gradescope</li>
+<li>Generate PDF and submit to Gradescope</li>
 </ol>
 
 </div>
